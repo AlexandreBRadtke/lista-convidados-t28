@@ -1,0 +1,9 @@
+.boxResultado {
+    border-color: rgb(220, 220, 220);
+    border-style: solid;
+    border-radius: 20px;
+    background-color: white;
+    font-size: auto;
+    color: rgb(0, 0, 0);
+    
+}

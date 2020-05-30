@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Lista de Convidados</title>
+    <meta charset="utf-8">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="convidados.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="tituloH1">
+            <h1>Lista de Convidados</h1>
+        </div>
+        <div class="dados">
+            <form>
+                <div class="nome">
+                    <input id="nome" type="text" placeholder="Nome do convidado">
+                </div>
+                <div class="idade">
+                    <input id="idade" type="number" placeholder="Idade">
+                </div>
+                <div class="email">
+                    <input id="email" type="email" placeholder="Email">
+                </div>
+                <div class="adicionar">
+                    <button type="button" onclick="adicionar()">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="boxResultado">
+        <section>
+            <table border="1">
+                <thead>
+                    <th>nome</th>
+                    <th>idade</th>
+                    <th>email</th>
+                </thead>
+                <tbody id="lista">
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+  
+</body>
+
+</html>
