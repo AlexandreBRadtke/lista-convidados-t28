@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
+</html>
 
 <head>
     <meta charset="UTF-8">
@@ -7,55 +9,67 @@
     <title>Lista de Convidados</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
-    <h1>Lista de Convidados</h1>
-    <form>
-        <div class="dados">
-            <div class="nome">
-                <label for="nome" class="text">nome</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3">
+    <h1 class="titulo text-center my-5">Lista de Convidados</h1>
+
+    <section id="erros" class="row justify-content-center"></section>
+
+    <section class="row justify-content-center">
+        <form class="card col col-10 col-sm-8 col-md-6 col-lg-3 p-3">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" class="form-control" type="text" placeholder="Nome do convidado">
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade</label>
+                <input class="form-control" id="idade" type="number" placeholder="Idade">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="Email">
+            </div>
+            <button class="btn btn-primary mb-3" type="button" onclick="salvar()">Salvar</button>
+            <button class="btn btn-outline-danger mb-3" type="button" onclick="limparFormulario()">Cancelar</button>
+        </form>
+    </section>
+    <section class="row justify-content-center mt-5">
+        <table class="table col col-10 col-sm-8 col-md-6">
+            <thead>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </thead>
+            <tbody id="lista"></tbody>
+        </table>
+    </section>
+
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alertaRemover">
+        Launch demo modal
+    </button> -->
+
+    <div class="modal fade" id="alertaRemover" tabindex="-1" role="dialog" aria-labelledby="titloModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titloModal">Tem certeza?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Este item vai ser apagado para sempre, pense bem...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal" onclick="confirmarRemocao()">Confirmar</button>
                 </div>
             </div>
-
-            <div class="idade">
-                <label for="idade" class="number">idade</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" id="idade">
-                </div>
-            </div>
-
-            <div class="email">
-                <label for="email" class="email">email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email">
-                </div>
-            </div>
-
         </div>
-
-    </form>
-    <div class="adicionar">
-        <div class="col-sm-10">
-            <button type="adicionar" onclick="adicionar()" class="btn btn-primary">adicionar</button>
-        </div>
-    </div>
-    <div class="form-group">
-        <section>
-            <table>
-                <thead>
-                    <th>nome</th>
-                    <th>idade</th>
-                    <th>email</th>
-                </thead>
-                <tbody id="lista">
-
-                </tbody>
-            </table>
-        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -67,6 +81,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
